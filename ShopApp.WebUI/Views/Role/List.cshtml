@@ -1,0 +1,38 @@
+﻿@model List<RoleModel>
+
+@{
+    ViewData["Title"] = "Rol Listesi";
+}
+
+<h1>Sistemde Tanımlı Roller</h1>
+<hr />
+
+<button class="btn btn-success mb-3">Yeni Rol Ekle</button>
+@if (true)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="width:30px;">Id</th>
+                <th style="width:100px;">Rol Adı</th>
+                <th style="width:150px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var role in Model)
+            {
+                <tr>
+                    <td>@role.Id</td>
+                    <td>@role.Name</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@role.Id" class="btn btn-primary btn-sm mr-2">
+                            Düzenle
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+

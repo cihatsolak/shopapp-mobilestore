@@ -1,0 +1,9 @@
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Web.Framework\bin\Debug\netcoreapp3.1\ShopApp.Web.Framework.deps.json
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Web.Framework\bin\Debug\netcoreapp3.1\ShopApp.Web.Framework.dll
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Web.Framework\bin\Debug\netcoreapp3.1\ShopApp.Web.Framework.pdb
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Web.Framework\obj\Debug\netcoreapp3.1\ShopApp.Web.Framework.csprojAssemblyReference.cache
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Web.Framework\obj\Debug\netcoreapp3.1\ShopApp.Web.Framework.csproj.CoreCompileInputs.cache
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Web.Framework\obj\Debug\netcoreapp3.1\ShopApp.Web.Framework.AssemblyInfoInputs.cache
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Web.Framework\obj\Debug\netcoreapp3.1\ShopApp.Web.Framework.AssemblyInfo.cs
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Web.Framework\obj\Debug\netcoreapp3.1\ShopApp.Web.Framework.dll
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Web.Framework\obj\Debug\netcoreapp3.1\ShopApp.Web.Framework.pdb

@@ -1,0 +1,14 @@
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Services\bin\Debug\netcoreapp3.1\ShopApp.Services.deps.json
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Services\bin\Debug\netcoreapp3.1\ShopApp.Services.dll
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Services\bin\Debug\netcoreapp3.1\ShopApp.Services.pdb
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Services\bin\Debug\netcoreapp3.1\ShopApp.Core.dll
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Services\bin\Debug\netcoreapp3.1\ShopApp.DataAccess.dll
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Services\bin\Debug\netcoreapp3.1\ShopApp.Core.pdb
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Services\bin\Debug\netcoreapp3.1\ShopApp.DataAccess.pdb
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Services\obj\Debug\netcoreapp3.1\ShopApp.Services.csprojAssemblyReference.cache
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Services\obj\Debug\netcoreapp3.1\ShopApp.Services.csproj.CoreCompileInputs.cache
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Services\obj\Debug\netcoreapp3.1\ShopApp.Services.AssemblyInfoInputs.cache
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Services\obj\Debug\netcoreapp3.1\ShopApp.Services.AssemblyInfo.cs
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Services\obj\Debug\netcoreapp3.1\ShopApp.Services.csproj.CopyComplete
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Services\obj\Debug\netcoreapp3.1\ShopApp.Services.dll
+C:\Users\CihatSolak\source\repos\ShopApp\ShopApp.Services\obj\Debug\netcoreapp3.1\ShopApp.Services.pdb

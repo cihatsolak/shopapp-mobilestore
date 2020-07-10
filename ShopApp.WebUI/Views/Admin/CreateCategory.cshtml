@@ -1,0 +1,15 @@
+﻿@model CategoryModel
+@{
+    ViewData["Title"] = "Kategori Ekle";
+}
+
+<h2>Yeni Kategori Ekle</h2>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-controller="Admin" asp-action="CreateCategory" method="post">
+            @await Html.PartialAsync("_categoryCreateOrUpdate", Model)
+        </form>
+    </div>
+</div>
+

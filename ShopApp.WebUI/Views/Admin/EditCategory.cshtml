@@ -1,0 +1,60 @@
+﻿@model CategoryModel
+@{
+    ViewData["Title"] = "Kategori Düzenle";
+}
+
+<h2>Yeni Kategori Ekle</h2>
+<hr />
+<div class="row">
+    <div class="col-md-5">
+        <form asp-controller="Admin" asp-action="EditCategory" method="post">
+            @await Html.PartialAsync("_categoryCreateOrUpdate", Model)
+        </form>
+    </div>
+    <div class="col-md-7">
+        @if (Model.Products.Count > 0)
+        {
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width:30px;">Id</th>
+                        <th style="width:100px;">Görsel</th>
+                        <th>Adı</th>
+                        <th style="width:12px;">Fiyat</th>
+                        <th style="width:150px;"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.Products)
+                    {
+                        <tr>
+                            <td>@product.Id</td>
+                            <td>
+                                <img src="~/img/@product.ImageUrl" alt="@product.Name" width="80" />
+                            </td>
+                            <td>@product.Name</td>
+                            <td>@product.Price</td>
+                            <td>
+                                <a href="/admin/products/@product.Id" class="btn btn-primary btn-sm mr-2">
+                                    Düzenle
+                                </a>
+                                <form asp-controller="Admin" asp-action="DeleteFromCategory" asp-route-id="@product.Id" style="display:inline">
+                                    <input type="hidden" name="productId" value="@product.Id" />
+                                    <input type="hidden" name="categoryId" value="@Model.Id" />
+                                    <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="alert alert-warning">
+                <h4>Ürün Bulunamadı!</h4>
+            </div>
+        }
+    </div>
+</div>
+

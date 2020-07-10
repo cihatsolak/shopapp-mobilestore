@@ -1,0 +1,55 @@
+﻿@model LoginModel
+@{
+    ViewData["Title"] = "Giriş Yap";
+}
+
+<h1>Giriş Yap</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-8">
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div class="mb-3">
+                <span class="text-danger">@ViewBag.ErrorMessage</span>
+            </div>
+        }
+        <form asp-controller="Account" asp-action="Login" method="post">
+            
+            <input type="hidden" asp-for="RedirectUrl" value="@ViewBag.ReturlUrl" />
+
+            <div class="form-group row">
+                <label asp-for="Username" class="col-md-2 col-form-label">Kullanıcı Adı</label>
+                <div class="col-md-10">
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Password" class="col-md-2 col-form-label">Şifre</label>
+                <div class="col-md-10">
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-2"></div>
+                <div class="col-md-10">
+                    <div class="my-1">
+                        <div class="custom-control custom-checkbox mr-sm-2">
+                            <input type="checkbox" class="custom-control-input" asp-for="RememberMe">
+                            <label class="custom-control-label" asp-for="RememberMe">Beni Hatırla</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-10 offset-md-2">
+                    <button type="submit" value="Giriş Yap" class="btn btn-primary">Giriş Yap</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+<h3>Şifremi unuttum.</h3>

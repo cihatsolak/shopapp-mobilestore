@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Shopping Web Application</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" rel="stylesheet" />
+    <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    @await Html.PartialAsync("_navbar")
+
+    <div class="container pt-100 mb-5">
+
+        @*@if (TempData["message"] != null)
+        {
+            @await Html.PartialAsync("Messages/_ResultMessage", TempData.Get<ResultMessage>("message"))
+        }*@
+
+        @if (TempData["message"] != null)
+        {
+            @await Html.PartialAsync("Messages/_ResultMessage", TempData.Get<ResultMessage>("message"))
+        }
+
+        @RenderBody()
+    </div>
+
+    <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="~/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="~/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/node_modules/ckeditor/ckeditor.js"></script>
+    @RenderSection("Scripts", false)
+    
+    <script type="text/javascript">
+        setInterval(function () {
+            $('#result-message').css("display", "none");
+        }, 3000)
+    </script>
+</body>
+</html>

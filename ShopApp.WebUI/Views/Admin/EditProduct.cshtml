@@ -1,0 +1,50 @@
+﻿@model ProductModel
+@{
+    ViewData["Title"] = "Ürün Düzenle";
+
+    var counter = 0;
+}
+
+@section Scripts{
+    <script>
+        CKEDITOR.replace("editor");
+    </script>
+}
+
+<h2>Ürün Düzenle - @Model.Name</h2>
+<hr />
+
+<form asp-controller="Admin" asp-action="EditProduct" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-8">
+            @await Html.PartialAsync("_productCreateOrUpdate", Model)
+        </div>
+        <div class="col-md-4">
+            <h6 class="h6">Ürünün Dahil Olduğu Kategoriler</h6>
+            @foreach (var item in ViewBag.Categories as List<Category>)
+            {
+                var isChecked = "";
+
+                if (Model.SelectedCategories.Any(x => x.Id == item.Id))
+                {
+                    isChecked = "checked";
+
+                    <input type="hidden" name="SelectedCategories[@counter].Id" value="@item.Id" />
+                    <input type="hidden" name="SelectedCategories[@counter].Name" value="@item.Name" />
+
+                    counter++;
+
+                }
+                else
+                {
+                    isChecked = "";
+                }
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="categoryIds" value="@item.Id" class="custom-control-input" id="category@(item.Id)" @isChecked />
+                    <label class="custom-control-label" for="category@(item.Id)">@item.Name</label>
+                </div>
+            }
+        </div>
+    </div>
+</form>

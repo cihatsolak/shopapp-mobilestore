@@ -1,0 +1,50 @@
+﻿@model ProductListModel
+@{
+    ViewData["Title"] = "Ürün Listesi";
+}
+
+<h1>Yönetici Ürünleri</h1>
+<hr />
+
+@if (Model.Products.Count > 0)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="width:30px;">Id</th>
+                <th style="width:100px;">Görsel</th>
+                <th>Adı</th>
+                <th style="width:12px;">Fiyat</th>
+                <th style="width:150px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.Products)
+            {
+                <tr>
+                    <td>@product.Id</td>
+                    <td>
+                        <img src="~/img/@product.ImageUrl" alt="@product.Name" width="80" />
+                    </td>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+                    <td>
+                        <a href="/admin/products/@product.Id" class="btn btn-primary btn-sm mr-2">
+                            Düzenle
+                        </a>
+                        <form asp-controller="Admin" asp-action="DeleteProduct" asp-route-id="@product.Id" style="display:inline">
+                            <input type="hidden" name="productId" value="@product.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">
+        <h4>Ürün Bulunamadı!</h4>
+    </div>
+}

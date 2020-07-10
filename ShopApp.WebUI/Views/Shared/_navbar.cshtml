@@ -1,0 +1,85 @@
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" asp-controller="Home" asp-action="Index">Shopping</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+            <li class="nav-item active">
+                <a class="nav-link" asp-controller="Shop" asp-action="List">Ürünler</a>
+            </li>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Cart" asp-action="Index">Sepetim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Order" asp-action="List">Siparişler</a>
+                </li>
+                @if (User.IsInRole("productManager") || User.IsInRole("admin"))
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="admin-products" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ürün İşlemleri
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="admin-products">
+                            <a class="dropdown-item" asp-controller="Admin" asp-action="ProductList">Tüm Ürünleri Listele</a>
+                            <a class="dropdown-item" asp-controller="Admin" asp-action="CreateProduct">Yeni Ürün Ekle</a>
+                        </div>
+                    </li>
+                }
+
+                @if (User.IsInRole("admin"))
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="admin-roles" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Rol İşlemleri
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="admin-roles">
+                            <a class="dropdown-item" asp-controller="Role" asp-action="List">Tanımlı Roller</a>
+                            <a class="dropdown-item" asp-controller="Role" asp-action="Create">Yeni Rol Ekle</a>
+                        </div>
+                    </li>
+                }
+
+                @if (User.IsInRole("categoryManager") || User.IsInRole("admin"))
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="admin-categories" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kategori İşlemleri
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="admin-categories">
+                            <a class="dropdown-item" asp-controller="Admin" asp-action="CategoryList">Kategorileri Listele</a>
+                            <a class="dropdown-item" asp-controller="Admin" asp-action="CreateCategory">Kategori Ekle</a>
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Account" asp-action="Manage">
+                        <span class="text-uppercase">@User.Identity.Name</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Account" asp-action="Logout">Çıkış Yap</a>
+                </li>
+            }
+            else
+            {
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Account" asp-action="Login">Giriş Yap</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Account" asp-action="Register">Kayıt Ol</a>
+                </li>
+            }
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,15 @@
+﻿@model RoleModel
+@{
+    ViewData["Title"] = "Rol Düzenle";
+}
+
+<h1>@Model.Name - Rol Düzenle</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-8">
+        <form asp-controller="Role" asp-action="Edit" method="post">
+            @await Html.PartialAsync("_createOrUpdate", Model)
+        </form>
+    </div>
+</div>

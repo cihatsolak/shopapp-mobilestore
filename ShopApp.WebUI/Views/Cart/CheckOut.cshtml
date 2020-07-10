@@ -1,0 +1,161 @@
+﻿@model OrderModel
+@{
+    ViewData["Title"] = "Ödeme Yap";
+}
+
+<h1>Ödeme Yap</h1>
+<hr class="mb-4" />
+
+<div class="row mb-3">
+
+    <div class="col-md-8">
+        <h4 class="mb-3">Sipariş Detayı</h4>
+        <hr class="mx-1 mt-3"/>
+        <form asp-controller="Cart" asp-action="CheckOut" method="post">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Ad</label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Soyadı</label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label>Adres</label>
+                <textarea asp-for="Address" class="form-control" rows="5"></textarea>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label>Şehir</label>
+                    <select asp-for="CityId" asp-items="Model.Cities" class="form-control"></select>
+                    <span asp-validation-for="CityId" class="text-danger"></span>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Telefon</label>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>E-Posta</label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+
+            <h4 class="h4 mb-3 mt-4">Diğer işlemler</h4>
+            <hr class="mb-4" />
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="save-info" />
+                        <label class="custom-control-label" for="save-info">
+                            Bir sonraki siparişimde bilgilerimi otomatik olarak doldur.
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="h4 mb-1 mt-5">Ödeme Tipi</h4>
+            <hr class="mb-1" />
+
+            <div class="d-inline-block my-3">
+                <div class="custom-control custom-radio">
+                    <input id="credit" name="payment" type="radio" class="custom-control-input" checked>
+                    <label class="custom-control-label" for="credit">Kredi Kartı</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input id="eft" type="radio" name="payment" class="custom-control-input">
+                    <label class="custom-control-label" for="eft">Eft</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input id="havale" type="radio" name="payment" class="custom-control-input">
+                    <label class="custom-control-label" for="havale">Havale</label>
+                </div>
+            </div>
+
+            <h4 class="mb-3 mt-2">Ödeme Yöntemi</h4>
+
+            <div class="row payment-credit-card">
+                <div class="col-md-6 mb-3">
+                    <label>Kart Üzerindeki İsim</label>
+                    <input asp-for="CartName" class="form-control" />
+                    <span asp-validation-for="CartName" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Kart Numarası</label>
+                    <input asp-for="CartNumber" class="form-control" />
+                    <span asp-validation-for="CartNumber" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row payment-credit-card">
+                <div class="col-md-4 mb-3">
+                    <label>Ay</label>
+                    <select asp-for="ExpirationMonthId" asp-items="Model.Months" class="form-control"></select>
+                    <span asp-validation-for="ExpirationMonthId" class="text-danger"></span>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Yıl</label>
+                    <select asp-for="ExpirationYearId" asp-items="Model.Years" class="form-control"></select>
+                    <span asp-validation-for="ExpirationYearId" class="text-danger"></span>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Cvv Numarası</label>
+                    <input asp-for="CVV" class="form-control" />
+                    <span asp-validation-for="CVV" class="text-danger"></span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block mt-2">
+                Siparişi Tamamla
+            </button>
+        </form>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <h4 class="mb-3">
+            <span class="text-muted">Sipariş Özetiniz</span>
+        </h4>
+        <ul class="list-group mb-3">
+            @foreach (var product in Model.CartModel.CartItemModels)
+            {
+                <li class="list-group-item d-flex justify-content-between">
+                    <div>
+                        <h6 class="my-0">
+                            @product.ProductName (@product.Quantity Adet)
+                            <small></small>
+                        </h6>
+                    </div>
+                    <span class="text-muted">@product.ProductPrice</span>
+                </li>
+            }
+            <li class="list-group-item d-flex justify-content-between">
+                <span>Total (TL)</span>
+                <strong>@Model.CartModel.TotalPrice() TL</strong>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+@section Scripts{
+<script type="text/javascript">
+
+    $("#eft").click(function () {
+        $(".payment-credit-card").hide();
+    });
+
+    $("#havale").click(function () {
+        $(".payment-credit-card").hide();
+    });
+
+    $("#credit").click(function () {
+        $(".payment-credit-card").show();
+    });
+</script>
+}

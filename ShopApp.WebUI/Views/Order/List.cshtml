@@ -1,0 +1,69 @@
+﻿@model List<OrderListModel>
+@{
+    ViewData["Title"] = "Sipariş Listesi";
+}
+
+<h1>Sipariş Listesi</h1>
+<hr />
+
+@if (Model.Count > 0)
+{
+    @foreach (var order in Model)
+    {
+        <table class="table table-bordered table-sm mb-4">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <td colspan="2">Order Id: @order.OrderId</td>
+                    <th>Fiyat</th>
+                    <th>Miktar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var orderItem in order.OrderItemModels)
+                {
+                    <tr>
+                        <td style="width:60px">
+                            <img src="~/img/@orderItem.ImageUrl" width="50" />
+                        </td>
+                        <td>@orderItem.Name</td>
+                        <td>@orderItem.Price &#8378;</td>
+                        <td>@orderItem.Quantity</td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Müşteri Adı:</td>
+                    <td>@order.FirstName @order.LastName</td>
+                    <td rowspan="6">Toplam Fiyat: @order.TotalPrice() &#8378;</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Adres:</td>
+                    <td>@order.Address</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Telefon:</td>
+                    <td>@order.Phone</td>
+                </tr>
+                <tr>
+                    <td colspan="2">E-Posta Adresi:</td>
+                    <td>@order.Email</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Ödeme Bilgisi:</td>
+                    <td>@order.PaymentType</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Sipariş Durumu:</td>
+                    <td>@order.OrderState</td>
+                </tr>
+            </tfoot>
+        </table>
+    }
+}
+else
+{
+    <div class="alert alert-warning">
+        Daha önce hiç sipariş verilmemiş.
+    </div>
+}
