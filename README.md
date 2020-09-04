@@ -20,7 +20,10 @@ They used asp.net identity package for identity management at the data access la
 
 
 ## ShopApp.Service
+After creating the identity, I integrated it into the project with the Microsoft Identity Framework library. Cookie settings have been set.
 
 ## Kurulu Paketler (ShopApp.Service)
  Microsoft.AspNetCore.Mvc.ViewFeatures,
+ SendGrid
+ 
  
