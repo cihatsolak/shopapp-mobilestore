@@ -22,6 +22,6 @@ The project was developed with four .NET core class libraries and one .net core 
  * Microsoft.AspNetCore.Mvc.ViewFeatures,
  * SendGrid
 
-## Contact Addresses
-### Linkedin: [GitHub](https://www.linkedin.com/in/cihatsolak/)
-### Twitter: [GitHub](https://twitter.com/cihattsolak)
+#### Contact Addresses
+##### Linkedin: [Linkedin'den mesaj gönder](https://www.linkedin.com/in/cihatsolak/)
+##### Twitter: [@cihattsolak adresine git](https://twitter.com/cihattsolak)
