@@ -4,24 +4,35 @@ The project was developed with four .NET core class libraries and one .net core 
 
 ![Home](https://user-images.githubusercontent.com/54249736/92264867-93a2d680-eee7-11ea-9d56-4feddd46e2a0.png)
 
-#### Kurulu Paketler (ShopApp.Core)
+#### Uploaded Packages (ShopApp.Core)
  * Microsoft.EntityFrameworkCore.Design
  
-#### Kurulu Paketler (ShopApp.DataAccess)
+#### Uploaded Packages (ShopApp.DataAccess)
  * Microsoft.AsNetCore.Identity.EntityFramework
  * Microsoft.EntityFrameworkCore
  * Microsoft.EntityFrameworkCore.Design
  * Microsoft.EntityFrameworkCore.SqlServer
  * Microsoft.EntityFrameworkCore.Tools
 
-#### Kurulu Paketler (ShopApp.Service)
+#### Uploaded Packages (ShopApp.Service)
  * Microsoft.AspNetCore.Mvc.ViewFeatures,
  * SendGrid
  
-#### Kurulu Paketler (ShopApp.Web.Framework)
+#### Uploaded Packages (ShopApp.Web.Framework)
  * Microsoft.AspNetCore.Mvc.ViewFeatures,
  * SendGrid
+ 
+ #### Uploaded Packages (ShopApp.WebUI)
+ * AutoMapper,
+ * AutoMapper.Extensions.Microsoft.DependencyInjection,
+ * FluentValidation.AspNetCore
+ * IyzipayCore
+ * Microsoft.AspNetCore.Identity.EntityFrameworkCore
+ * Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
+ * Microsoft.AspNetCore.Razor.Runtime
+ * Microsoft.EntityFrameworkCore.Design
+ * Microsoft.VisualStudio.Web.CodeGeneration.Design
 
 #### Contact Addresses
-##### Linkedin: [Linkedin'den mesaj gönder](https://www.linkedin.com/in/cihatsolak/)
-##### Twitter: [@cihattsolak adresine git](https://twitter.com/cihattsolak)
+##### Linkedin: [Send a message on Linkedin](https://www.linkedin.com/in/cihatsolak/)
+##### Twitter: [Go to @cihattsolak](https://twitter.com/cihattsolak)
