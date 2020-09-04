@@ -11,7 +11,7 @@ The kernel layer is the section where the classes belonging to the database are 
 ## ShopApp.DataAccess
 They used asp.net identity package for identity management at the data access layer.
 
-## Kurulu Paketler (ShopApp.DataAccess)
+##£## Kurulu Paketler (ShopApp.DataAccess)
  Microsoft.AsNetCore.Identity.EntityFramework
  Microsoft.EntityFrameworkCore
  Microsoft.EntityFrameworkCore.Design
