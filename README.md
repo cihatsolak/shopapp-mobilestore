@@ -5,7 +5,7 @@ The project was developed with four .NET core class libraries and one .net core 
 ![Home](https://user-images.githubusercontent.com/54249736/92264867-93a2d680-eee7-11ea-9d56-4feddd46e2a0.png)
 
 #### Kurulu Paketler (ShopApp.Core)
- Microsoft.EntityFrameworkCore.Design
+ * Microsoft.EntityFrameworkCore.Design
  
 #### Kurulu Paketler (ShopApp.DataAccess)
  * Microsoft.AsNetCore.Identity.EntityFramework
@@ -15,9 +15,13 @@ The project was developed with four .NET core class libraries and one .net core 
  * Microsoft.EntityFrameworkCore.Tools
 
 #### Kurulu Paketler (ShopApp.Service)
- Microsoft.AspNetCore.Mvc.ViewFeatures,
- SendGrid
+ * Microsoft.AspNetCore.Mvc.ViewFeatures,
+ * SendGrid
  
 #### Kurulu Paketler (ShopApp.Web.Framework)
- Microsoft.AspNetCore.Mvc.ViewFeatures,
- SendGrid
+ * Microsoft.AspNetCore.Mvc.ViewFeatures,
+ * SendGrid
+
+## Contact Addresses
+### Linkedin: [GitHub](https://www.linkedin.com/in/cihatsolak/)
+### Twitter: [GitHub](https://twitter.com/cihattsolak)
