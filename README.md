@@ -1,6 +1,6 @@
 ## Mobile Phone Shop Application
 
-The project was developed with four .NET core class libraries and one .net core web application. Core kütüphanesinde the kernel layer is the section where the classes belonging to the database are located. We keep the properties that can be used in common in all these classes in the Base Entity class. The asp.net identity package is used for identity management in the data access layer.
+The project was developed with four .NET core class libraries and one .net core web application. Core library the kernel layer is the section where the classes belonging to the database are located. We keep the properties that can be used in common in all these classes in the Base Entity class. The asp.net identity package is used for identity management in the data access layer.
 
 ###### There is payment integration with iyzico.
 
